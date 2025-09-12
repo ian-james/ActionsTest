@@ -4,10 +4,11 @@ import os
 
 def fetch_json(url: str):
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=20)
         response.raise_for_status()  # Raise an error for bad status codes
         data = response.json()
-        print(data)
+        print( json.dumps(data, indent=2))
+        
     except requests.exceptions.RequestException as e:
         print(f"Request error: {e}")
     except ValueError as e:

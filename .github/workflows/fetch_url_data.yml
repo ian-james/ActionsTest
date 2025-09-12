@@ -1,7 +1,7 @@
 name: Run Fetch JSON
 
 on: 
-push:
+  push:
   workflow_dispatch:
   schedule:
     - cron: "0 12 * * *"
@@ -17,7 +17,7 @@ jobs:
       - name: Setup up Python
         uses: actions/setup-python@v5
         with:
-          python-versions: "3.12"
+          python-version: "2.12"
           cache: "pip"
 
       - name: Install Deps
