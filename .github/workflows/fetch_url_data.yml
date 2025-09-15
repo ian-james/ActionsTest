@@ -28,6 +28,6 @@ jobs:
         env:
           TARGET_URL: "None"
         run: |
-          python requestMe.py 
+          python ./src/requestMe.py 
 
 
