@@ -26,7 +26,7 @@ jobs:
 
       - name: Run Script
         env:
-          TARGET_URL: "None"
+          TARGET_URL: null
         run: |
           python ./src/requestMe.py 
 
