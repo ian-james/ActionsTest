@@ -1,6 +1,7 @@
 import requests
 import sys
 import os
+import json
 
 def fetch_json(url: str):
     try:
@@ -15,9 +16,8 @@ def fetch_json(url: str):
         print(f"Invalid JSON: {e}")
 
 if __name__ == "__main__":
-    # Example: JSON placeholder test API
     url = os.environ.get("TARGET_URL") or (sys.argv[1] if len(sys.argv) > 1 else None)
-    if not url:
+    if url is None or not url:
         url = "https://jsonplaceholder.typicode.com/todos/1"
     fetch_json(url)
 
